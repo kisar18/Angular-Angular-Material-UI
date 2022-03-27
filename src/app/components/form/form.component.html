@@ -1,0 +1,46 @@
+<div class="form-container">
+  <form class="form">
+    <h2 class="title">Please fill out the form</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>First name</mat-label>
+    <input matInput placeholder="First name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last name</mat-label>
+    <input matInput placeholder="First name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+    <input matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-radio-group class="radio-btns">
+      <span>Gender</span>
+      <mat-radio-button value="male" class="mt-2" color="primary">Male</mat-radio-button>
+      <mat-radio-button value="female" class="mt-2" color="primary">Female</mat-radio-button>
+      <mat-radio-button value="other" class="mt-2" color="primary">Other</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline" class="mt-4">
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let color of colors" [value]="color.value">
+          {{color.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox class="mt-4 title" color="primary">Employed</mat-checkbox>
+
+    <mat-form-field appearance="outline" class="mt-4">
+      <mat-label>Notes</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+
+    <div class="btns">
+      <button mat-button class="btn-submit">Submit</button>
+      <button mat-stroked-button class="btn-clear">Clear Values</button>
+    </div>
+  </form>
+</div>
