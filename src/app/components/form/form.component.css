@@ -1,47 +1,54 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
   
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 13px;
+  width: 75%;
+}
+
+
+.radio-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-4 {
+  margin-top: 15px;
+}
+
+.title {
+  text-align: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-submit {
+  color: white;
+  background-color: #1976d2;
+  font-size: 18px;
+}
+
+.btn-clear {
+  border: 1px solid #1976d2;
+  color: #1976d2;
+}
+
+@media (max-width: 960px){
   .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 13px;
-    width: 75%;
+    margin-bottom: 80px;
   }
-  
-  
-  .radio-btns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .mt-2 {
-    margin-top: 8px;
-  }
-  
-  .mt-4 {
-    margin-top: 15px;
-  }
-  
-  .title {
-    text-align: center;
-  }
-  
-  .btns {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .btn-submit {
-    color: white;
-    background-color: #1976d2;
-  }
-  
-  .btn-clear {
-    border: 1px solid #1976d2;
-    color: #1976d2;
-  }
+}

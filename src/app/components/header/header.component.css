@@ -52,6 +52,7 @@
   }
   .more-btn {
     display: flex;
+    justify-content: center;
   }
   .header-btn-group {
     display: none;

@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
 
-  constructor() { }
+  constructor(private mobileMenuService: MobileMenuService) { }
 
   colors = [
     {value: 'Red', viewValue: 'Red'},
@@ -15,7 +16,12 @@ export class FormComponent implements OnInit {
     {value: 'Blue', viewValue: 'Blue'}
   ]
 
-  ngOnInit(): void {
+  closeMobileMenu() {
+    this.mobileMenuService.emitChange();
+  }
+
+  onSubmit() {
+    //
   }
 
 }

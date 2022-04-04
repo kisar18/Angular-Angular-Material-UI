@@ -1,0 +1,47 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.title {
+  color: #1976d2;
+  font-weight: bold;
+  margin-top: 64px;
+}
+
+.list-item-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.list {
+  border: 10px solid #1976d2;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.go-back {
+  color: #1976d2;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 960px) {
+  .list {
+    width: 95%;
+  }
+  .list-item-text {
+    font-size: 17px;
+  }
+}
+
+.link-back {
+  border: 1px solid red;
+}

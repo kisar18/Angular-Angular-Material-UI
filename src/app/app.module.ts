@@ -17,6 +17,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
+import { MatListModule } from '@angular/material/list';
+import { FormResultsComponent } from './components/form-results/form-results.component';
+import { Router, RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +29,8 @@ import { FormComponent } from './components/form/form.component';
     HeaderComponent,
     FooterComponent,
     FormComponent,
+    MobileMenuComponent,
+    FormResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,16 @@ import { FormComponent } from './components/form/form.component';
     FontAwesomeModule,
     MatRadioModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule,
+    RouterModule.forRoot([
+      { 
+        path: '', component: FormComponent 
+      },
+      { 
+        path: 'results', component: FormResultsComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
