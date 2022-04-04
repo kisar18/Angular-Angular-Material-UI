@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private mobileMenuService: MobileMenuService) {
     this.mobileMenuService.changeEmitted$.subscribe(visibility => {
       this.visibilityOfMobileMenu = visibility;
-  });
+    });
   }
 
   title = 'angular-app';
@@ -25,12 +25,12 @@ export class AppComponent {
   visibilityOfMobileMenu = false;
 
   changeVisibility() {
-    this.visibilityOfMobileMenu = !this.visibilityOfMobileMenu;
+    this.mobileMenuService.emitChange(true);
   }
 
   closeMobileMenu() {
     if(this.visibilityOfMobileMenu) {
-      this.mobileMenuService.emitChange();
+      this.mobileMenuService.emitChange(false);
     }
   }
 }

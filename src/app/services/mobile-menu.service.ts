@@ -7,9 +7,9 @@ import { Subject } from 'rxjs';
 export class MobileMenuService {
   constructor() { }
 
-  private mobileMenuVisibility = new Subject<boolean>();
+  public mobileMenuVisibility = new Subject<boolean>();
   changeEmitted$ = this.mobileMenuVisibility.asObservable();
-  emitChange() {
-    this.mobileMenuVisibility.next(!this.mobileMenuVisibility);
+  emitChange(change: boolean) {
+    this.mobileMenuVisibility.next(change);
   }
 }

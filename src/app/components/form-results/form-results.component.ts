@@ -18,7 +18,7 @@ export class FormResultsComponent implements OnInit {
   @Output() mobileMenu:EventEmitter<string> = new EventEmitter<string>();
 
   closeMobileMenu() {
-    this.mobileMenuService.emitChange();
+    this.mobileMenuService.emitChange(false);
   }
 
   ngOnInit(): void {

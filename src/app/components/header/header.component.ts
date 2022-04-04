@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { MobileMenuService } from 'src/app/services/mobile-menu.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,12 +9,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Output() mobileMenuVisibility:EventEmitter<string> = new EventEmitter<string>();
-
-  constructor() { }
+  constructor(private mobileMenuService: MobileMenuService) {}
 
   changeMobileMenuVisibility() {
-    this.mobileMenuVisibility.emit();
-  }
 
+    //if(!this.mobileMenuService.mobileMenuVisibility) {
+    //}
+    this.mobileMenuService.emitChange(true);
+  }
 }

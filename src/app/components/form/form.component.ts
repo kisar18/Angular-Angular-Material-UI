@@ -17,7 +17,7 @@ export class FormComponent {
   ]
 
   closeMobileMenu() {
-    this.mobileMenuService.emitChange();
+    this.mobileMenuService.emitChange(false);
   }
 
   onSubmit() {

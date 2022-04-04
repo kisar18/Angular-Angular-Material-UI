@@ -19,7 +19,7 @@ export class FooterComponent {
   faTwitter = faTwitter;
 
   closeMobileMenu() {
-    this.mobileMenuService.emitChange();
+    this.mobileMenuService.emitChange(false);
   }
 
 }
