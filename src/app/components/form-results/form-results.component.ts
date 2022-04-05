@@ -1,30 +1,31 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormResultsService } from 'src/app/services/form-results.service';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-form-results',
   templateUrl: './form-results.component.html',
   styleUrls: ['./form-results.component.css']
 })
-export class FormResultsComponent implements OnInit {
+export class FormResultsComponent {
+  
+  firstName = "";
+  subscription: Subscription;
 
-  firstName: string = "";
   constructor(
-    private route: ActivatedRoute, 
-    private mobileMenuService: MobileMenuService
-    ) { }
+    private mobileMenuService: MobileMenuService,
+    private formResultsService: FormResultsService
+  ) { 
+    this.subscription = this.formResultsService.changeEmitted$.subscribe(res => {
+      this.firstName = res;
+      console.log(this.firstName);
+    });
+  }
 
-  @Output() mobileMenu:EventEmitter<string> = new EventEmitter<string>();
 
   closeMobileMenu() {
     this.mobileMenuService.emitChange(false);
-  }
-
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.firstName = params['firstName'];
-    });
   }
 
 }

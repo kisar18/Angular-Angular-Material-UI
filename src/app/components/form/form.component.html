@@ -1,20 +1,20 @@
 <div class="form-container" (click)="closeMobileMenu()">
-  <form class="form">
+  <form class="form" #infoForm="ngForm" (ngSubmit)="onSubmit(infoForm)">
     <h2 class="title">Please fill out the form</h2>
     <mat-form-field appearance="outline">
       <mat-label>First name</mat-label>
-    <input matInput placeholder="First name">
+    <input matInput name="firstName" placeholder="First name" ngModel>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Last name</mat-label>
-    <input matInput placeholder="First name">
+    <input matInput name="lastName" placeholder="Last name" ngModel>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-    <input matInput placeholder="First name">
+    <input matInput name="email" placeholder="Email" ngModel>
     </mat-form-field>
 
-    <mat-radio-group class="radio-btns">
+    <mat-radio-group class="radio-btns" name="gender" ngModel>
       <span>Gender</span>
       <mat-radio-button value="male" class="mt-2" color="primary">Male</mat-radio-button>
       <mat-radio-button value="female" class="mt-2" color="primary">Female</mat-radio-button>
@@ -23,24 +23,24 @@
 
     <mat-form-field appearance="outline" class="mt-4">
       <mat-label>Favorite food</mat-label>
-      <mat-select>
+      <mat-select name="favouriteColor" ngModel>
         <mat-option *ngFor="let color of colors" [value]="color.value">
           {{color.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-checkbox class="mt-4 title" color="primary">Employed</mat-checkbox>
+    <mat-checkbox class="mt-4 title" color="primary" name="employed" ngModel>Employed</mat-checkbox>
 
     <mat-form-field appearance="outline" class="mt-4">
       <mat-label>Notes</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput name="notes" ngModel></textarea>
     </mat-form-field>
 
 
     <div class="btns">
-      <button routerLink="/results" [queryParams]="{firstName: 'Jmeno'}" mat-button class="btn-submit">Submit</button>
-      <button mat-stroked-button class="btn-clear">Clear Values</button>
+      <button type="submit" routerLink="/results" mat-button class="btn-submit" (click)="onSubmit(infoForm)">Submit</button>
+      <button type="button" mat-stroked-button class="btn-clear">Clear Values</button>
     </div>
   </form>
 </div>

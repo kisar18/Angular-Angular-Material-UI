@@ -21,6 +21,7 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
 import { MatListModule } from '@angular/material/list';
 import { FormResultsComponent } from './components/form-results/form-results.component';
 import { Router, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { Router, RouterModule } from '@angular/router';
     MatSelectModule,
     MatCheckboxModule,
     MatListModule,
+    FormsModule,
     RouterModule.forRoot([
       { 
         path: '', component: FormComponent 

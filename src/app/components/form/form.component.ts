@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { FormResultsService } from 'src/app/services/form-results.service';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 
 @Component({
@@ -8,20 +10,27 @@ import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 })
 export class FormComponent {
 
-  constructor(private mobileMenuService: MobileMenuService) { }
+  constructor(
+    private mobileMenuService: MobileMenuService,
+    private formResultsService: FormResultsService
+  ) {
+  }
+
+  firstName = "";
 
   colors = [
     {value: 'Red', viewValue: 'Red'},
     {value: 'Green', viewValue: 'Green'},
     {value: 'Blue', viewValue: 'Blue'}
-  ]
+  ];
 
   closeMobileMenu() {
     this.mobileMenuService.emitChange(false);
   }
 
-  onSubmit() {
-    //
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+    this.formResultsService.emitChange(form.value.firstName);
   }
 
 }
