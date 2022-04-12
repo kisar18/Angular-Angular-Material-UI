@@ -1,6 +1,8 @@
 <div class="results" (click)="closeMobileMenu()">
   <h1 class="title">↓ Results ↓</h1>
 
+<ng-container *ngIf="firstName">Ahoj</ng-container>
+
   <mat-list class="list">
     <mat-list-item class="list-item-text">First name: {{ firstName }}</mat-list-item>
     <mat-divider></mat-divider>

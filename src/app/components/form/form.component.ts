@@ -16,8 +16,6 @@ export class FormComponent {
   ) {
   }
 
-  firstName = "";
-
   colors = [
     {value: 'Red', viewValue: 'Red'},
     {value: 'Green', viewValue: 'Green'},
@@ -29,7 +27,7 @@ export class FormComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    console.log("Form: ", form.value.firstName);
     this.formResultsService.emitChange(form.value.firstName);
   }
 

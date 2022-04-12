@@ -19,7 +19,7 @@ export class FormResultsComponent {
   ) { 
     this.subscription = this.formResultsService.changeEmitted$.subscribe(res => {
       this.firstName = res;
-      console.log(this.firstName);
+      console.log("Results: ", this.firstName);
     });
   }
 
