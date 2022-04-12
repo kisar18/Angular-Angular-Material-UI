@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { FormResultsService } from 'src/app/services/form-results.service';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -12,9 +11,19 @@ export class FormComponent {
 
   constructor(
     private mobileMenuService: MobileMenuService,
-    private formResultsService: FormResultsService
+    private router: Router,
   ) {
   }
+
+  public result = { 
+    firstName: "", 
+    lastName: "",
+    email: "",
+    gender: "",
+    favouriteColor: "",
+    employed: false,
+    notes: "",
+  };
 
   colors = [
     {value: 'Red', viewValue: 'Red'},
@@ -26,9 +35,8 @@ export class FormComponent {
     this.mobileMenuService.emitChange(false);
   }
 
-  onSubmit(form: NgForm) {
-    console.log("Form: ", form.value.firstName);
-    this.formResultsService.emitChange(form.value.firstName);
+  onSubmit(): void {
+    this.router.navigateByUrl("/results", { state: this.result });
   }
 
 }

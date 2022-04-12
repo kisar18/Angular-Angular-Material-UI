@@ -1,28 +1,24 @@
-import { Component } from '@angular/core';
-import { FormResultsService } from 'src/app/services/form-results.service';
+import { Component, OnInit } from '@angular/core';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-results',
   templateUrl: './form-results.component.html',
   styleUrls: ['./form-results.component.css']
 })
-export class FormResultsComponent {
+export class FormResultsComponent implements OnInit {
   
-  firstName = "";
   subscription: Subscription;
+  result;
 
-  constructor(
-    private mobileMenuService: MobileMenuService,
-    private formResultsService: FormResultsService
-  ) { 
-    this.subscription = this.formResultsService.changeEmitted$.subscribe(res => {
-      this.firstName = res;
-      console.log("Results: ", this.firstName);
-    });
+  constructor(private router: Router, private mobileMenuService: MobileMenuService) {
   }
 
+  ngOnInit() {
+    this.result = history.state;
+  }
 
   closeMobileMenu() {
     this.mobileMenuService.emitChange(false);
