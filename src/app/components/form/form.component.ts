@@ -35,8 +35,20 @@ export class FormComponent {
     this.mobileMenuService.emitChange(false);
   }
 
-  onSubmit(): void {
-    this.router.navigateByUrl("/results", { state: this.result });
+  onSubmit(firstNameValid, lastNameValid, emailValid): void {
+    if(firstNameValid && lastNameValid && emailValid) {
+      this.router.navigateByUrl("/results", { state: this.result });
+    }
+  }
+
+  onClear() {
+    this.result.firstName = "";
+    this.result.lastName = "";
+    this.result.email = "";
+    this.result.gender = "";
+    this.result.favouriteColor = "";
+    this.result.employed = false;
+    this.result.notes = "";
   }
 
 }

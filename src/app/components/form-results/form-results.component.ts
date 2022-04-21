@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-results',
@@ -10,10 +8,9 @@ import { Router } from '@angular/router';
 })
 export class FormResultsComponent implements OnInit {
   
-  subscription: Subscription;
   result;
 
-  constructor(private router: Router, private mobileMenuService: MobileMenuService) {
+  constructor(private mobileMenuService: MobileMenuService) {
   }
 
   ngOnInit() {

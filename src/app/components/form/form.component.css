@@ -39,7 +39,11 @@
 .btn-submit {
   color: white;
   background-color: #1976d2;
-  font-size: 18px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-clear {

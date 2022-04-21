@@ -20,7 +20,7 @@ import { FormComponent } from './components/form/form.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { MatListModule } from '@angular/material/list';
 import { FormResultsComponent } from './components/form-results/form-results.component';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 
