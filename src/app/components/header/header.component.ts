@@ -12,9 +12,6 @@ export class HeaderComponent {
   constructor(private mobileMenuService: MobileMenuService) {}
 
   changeMobileMenuVisibility() {
-
-    //if(!this.mobileMenuService.mobileMenuVisibility) {
-    //}
     this.mobileMenuService.emitChange(true);
   }
 }
