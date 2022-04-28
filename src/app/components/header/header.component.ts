@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,3 +14,4 @@ export class HeaderComponent {
     this.mobileMenuService.emitChange(true);
   }
 }
+

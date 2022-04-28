@@ -26,9 +26,9 @@ export class FormComponent {
   };
 
   colors = [
-    {value: 'Red', viewValue: 'Red'},
-    {value: 'Green', viewValue: 'Green'},
-    {value: 'Blue', viewValue: 'Blue'}
+    {value: 'Red'},
+    {value: 'Green'},
+    {value: 'Blue'}
   ];
 
   closeMobileMenu() {

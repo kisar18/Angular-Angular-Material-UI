@@ -13,7 +13,15 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput name="email" placeholder="Email" [(ngModel)]="result.email" #email="ngModel" required email>
+      <input 
+        matInput 
+        name="email" 
+        placeholder="Email" 
+        [(ngModel)]="result.email"
+        #email="ngModel"
+        required
+        email
+      >
       <mat-error [hidden]="email.valid">Email is required</mat-error>
     </mat-form-field>
 
@@ -28,7 +36,7 @@
       <mat-label>Favorite color</mat-label>
       <mat-select name="favouriteColor" [(ngModel)]="result.favouriteColor">
         <mat-option *ngFor="let color of colors" [value]="color.value">
-          {{color.viewValue}}
+          {{color.value}}
         </mat-option>
       </mat-select>
     </mat-form-field>
