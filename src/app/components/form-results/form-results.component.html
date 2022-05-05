@@ -2,20 +2,21 @@
   <h1 class="title">↓ Results ↓</h1>
 
   <mat-list class="list">
-    <mat-list-item class="list-item-text">First name: {{ result.firstName }}</mat-list-item>
+    <mat-list-item class="list-item-text">First name: {{ getFirstName() }}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Last name: {{ result.lastName }}</mat-list-item>
+    <mat-list-item class="list-item-text">Last name: {{ getLastName() }}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Email: {{ result.email }}</mat-list-item>
+    <mat-list-item class="list-item-text">Email: {{ getEmail() }}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Gender: {{ result.gender }}</mat-list-item>
+    <mat-list-item class="list-item-text">Gender: {{ getGender() }}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Favourite color: {{ result.favouriteColor }}</mat-list-item>
+    <mat-list-item class="list-item-text">Favourite color: {{ getFavouriteColor() }}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Employed: {{ result.employed ? "Yes" : "No"}}</mat-list-item>
+    <mat-list-item class="list-item-text">Employed: {{ getEmployed() ? "Yes" : "No"}}</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item class="list-item-text">Notes: {{ result.notes }}</mat-list-item>
+    <mat-list-item class="list-item-text">Notes: {{ getNotes() }}</mat-list-item>
   </mat-list>
   
   <a routerLink="/" class="go-back">Go Back</a>
 </div>
+
